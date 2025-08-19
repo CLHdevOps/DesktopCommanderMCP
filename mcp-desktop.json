@@ -1,0 +1,37 @@
+{
+  "mcp": {
+    "servers": {
+      "MCP_DOCKER": {
+        "command": "docker",
+        "args": [
+          "mcp",
+          "gateway",
+          "run"
+        ],
+        "type": "stdio"
+      },
+      "aks-mcp-server": {
+        "type": "stdio",
+        "command": "<enter the file path>",
+        "args": [
+          "--transport",
+          "stdio"
+        ]
+      },
+      "desktop-commander": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-v",
+          "/local-directory:/local-directory",
+          "mcp/desktop-commander",
+          "npm",
+          "run",
+          "start"
+        ]
+      }
+    }
+  }
+}
